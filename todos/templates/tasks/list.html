@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Lists</title>
+    <link rel="stylesheet" href="{% static "css/tasks.css" %}">
+</head>
+<body>
+    <main>
+        <div>
+            <h1>My Lists</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for list in todo_list_list %}
+                    <tr>
+                        <td>{{ list.name }}</td>
+                        <td>{{ list.items.all|length }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
