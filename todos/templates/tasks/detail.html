@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="{% static "css/tasks.css" %}">
 </head>
 <body>
@@ -14,8 +14,26 @@
         </nav>
     </header>
     <main>
-        <h1>Task Title</h1>
-        <p>Task Description</p>
+        <div>
+            <h1>{{ todo_list_detail.name }}</h1>
+            <h2>Tasks</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in todo_list_detail.items.all %}
+                    <tr>
+                        <td>{{ task.task }}</td>
+                        <td>{{ task.due_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
     <footer>
