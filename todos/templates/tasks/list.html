@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{% static "css/tasks.css" %}">
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="{% url 'todo_list_list' %}">Main Page</a>
+        </nav>
+    </header>
     <main>
         <div>
             <h1>My Lists</h1>
@@ -21,7 +26,7 @@
                 <tbody>
                     {% for list in todo_list_list %}
                     <tr>
-                        <td>{{ list.name }}</td>
+                        <td><a href="{% url 'show_todo_list' list.id %}">{{ list.name }}</a></td>
                         <td>{{ list.items.all|length }}</td>
                     </tr>
                     {% endfor %}
