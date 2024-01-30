@@ -20,3 +20,7 @@ def show_todo_list(request, id):
         "todo_list_detail": todo_list,
     }
     return render(request, "tasks/detail.html", context)
+
+# def create_todo_list(request):
+#     if request.method == "POST":
+#         form =

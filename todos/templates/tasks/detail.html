@@ -22,6 +22,7 @@
                     <tr>
                         <th>Task</th>
                         <th>Due Date</th>
+                        <th>Completed?</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,7 @@
                     <tr>
                         <td>{{ task.task }}</td>
                         <td>{{ task.due_date }}</td>
+                        <td>{{ task.is_completed }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
