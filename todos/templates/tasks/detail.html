@@ -30,7 +30,8 @@
                 <tbody>
                     {% for task in todo_list_detail.items.all %}
                     <tr>
-                        <td>{{ task.task }}</td>
+                        <td><a href="{% url 'update_todo_item' task.id %}"
+                            >{{ task.task }}</a</td>
                         <td>{{ task.due_date }}</td>
                         <td>{{ task.is_completed }}</td>
                     </tr>
