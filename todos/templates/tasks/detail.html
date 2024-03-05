@@ -12,6 +12,7 @@
         <nav>
             <a href="{% url 'todo_list_list' %}">Main Page</a>
             <a href="{% url 'update_todo_list' todo_list_detail.id %}">Edit List</a>
+            <a href="{% url 'delete_todo_list' todo_list_detail.id %}">Delete</a>
         </nav>
     </header>
     <main>
